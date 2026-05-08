@@ -1,7 +1,7 @@
 import tkinter as tk
 import math
 
-class calculator:
+class Calculator:
     def __init__(self,root):
         self.root = root
         self.root.title("Python Calculator")
@@ -18,7 +18,7 @@ class calculator:
     def clear(self):
         self.entry.delete(0, tk.END)
 
-class advanced_calculator(calculator):
+class AdvancedCalculator (Calculator):
 
     def calculate(self):
         try:
@@ -84,7 +84,7 @@ class advanced_calculator(calculator):
 
 root = tk.Tk()
 
-calc = advanced_calculator(root)
+calc = AdvancedCalculator(root)
 calc.create_buttons()
 
 root.mainloop()
