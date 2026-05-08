@@ -1,4 +1,5 @@
 import tkinter as tk
+import math
 
 class calculator:
     def __init__(self,root):
@@ -27,6 +28,21 @@ class advanced_calculator(calculator):
             self.entry.delete(0, tk.END)
             self.entry.insert(tk.END, "Error")
 
+    def square_root(self):
+        try:
+            result = math.sqrt(float(self.entry.get()))
+            self.entry.delete(0, tk.END)
+            self.entry.insert(tk.END, result)
+        except:
+            self.entry.delete(0, tk.END)
+            self.entry.insert(tk.END, "Error")
+
+   
+    def backspace(self):
+        current = self.entry.get()
+        self.entry.delete(0, tk.END)
+        self.entry.insert(0, current[:-1])
+
     def create_buttons(self):
 
         buttons = [
@@ -34,7 +50,7 @@ class advanced_calculator(calculator):
             ['4', '5', '6', '*'],
             ['1', '2', '3', '-'],
             ['0', '.', '=', '+'],
-            ['C']
+            ['C', '√', '⌫']
         ]
 
         for row in buttons:
