@@ -29,3 +29,24 @@ buttons = [
     ['0', '.', '=', '+'],
     ['C']
 ]
+
+for row in buttons:
+    frame = tk.Frame(root)
+    frame.pack(expand=True, fill="both")
+
+    for btn in row:
+        if btn == "=":
+            action = calculate
+        elif btn == "C":
+            action = clear
+        else:
+            action = lambda x=btn: click(x)
+
+        tk.Button(
+            frame,
+            text=btn,
+            font=("Arial", 18),
+            command=action
+        ).pack(side="left", expand=True, fill="both")
+
+root.mainloop()
