@@ -7,6 +7,7 @@ class calculator:
         self.root.title("Python Calculator")
         self.root.geometry("400x500")
         self.root.resizable(0,0)
+        self.root.configure(bg="gray")
 
         self.entry = tk.Entry(self.root, font=("Arial", 20), justify="right")
         self.entry.pack(fill="both",padx=10, pady=10,)
@@ -69,12 +70,15 @@ class advanced_calculator(calculator):
                     action = self.backspace
                 else:
                     action = lambda x=btn: self.click(x)
+                    color = "gray"
 
                 tk.Button(
                     frame,
                     text=btn,
                     font=("Arial", 18),
-                    command=action
+                    command=action,
+                    bg=color,
+                    fg="lightgray"
                 ).pack(side="left", expand=True, fill="both")
 
 
