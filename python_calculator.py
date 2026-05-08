@@ -63,6 +63,10 @@ class advanced_calculator(calculator):
                     action = self.calculate
                 elif btn == "C":
                     action = self.clear
+                elif btn == "√":
+                    action = self.square_root
+                elif btn == "⌫":
+                    action = self.backspace
                 else:
                     action = lambda x=btn: self.click(x)
 
