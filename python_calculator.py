@@ -18,3 +18,14 @@ def calculate():
     except:
         entry.delete(0, tk.END)
         entry.insert(tk.END, "Error")
+
+def clear():
+    entry.delete(0, tk.END)
+
+buttons = [
+    ['7', '8', '9', '/'],
+    ['4', '5', '6', '*'],
+    ['1', '2', '3', '-'],
+    ['0', '.', '=', '+'],
+    ['C']
+]
